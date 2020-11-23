@@ -1,0 +1,10 @@
+## 避免客户端和服务端 端口 冲突
+server:
+  port: 9097
+spring:
+  profiles:
+    include: dev
+    active: task
+dubbo:
+  application:
+    id: dubbo_provider

@@ -1,0 +1,7 @@
+task:
+  multipart:
+    maxFileSize: 50Mb
+  # 设置所有文件最大内存
+    maxRequestSize: 50Mb
+  file:
+    base-path: C:\Code\JavaCode\uploadImage\
