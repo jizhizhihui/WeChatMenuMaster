@@ -52,9 +52,9 @@ spring:
 
 # ====================MybatisPlus====================
 mybatis-plus:
-  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
-  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
-  mapper-locations: classpath:mybatis/**/*Mapper.xml
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.mapper
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.mapper
+  mapper-locations: classpath:mybatis/**/*Mapper.mapper
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.com.JZhi.project.entity
   global-config:
