@@ -2,7 +2,7 @@ package com.wxMenuProvider.project.serverImpl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wxMenuAPI.project.entity.User;
-import com.wxMenuAPI.project.model.WXSessionModel;
+import com.wxMenuAPI.project.VO.WXSessionVO;
 import com.wxMenuAPI.project.service.IUserService;
 import com.wxMenuAPI.utils.FileUtils;
 import com.wxMenuProvider.project.mapper.UserMapper;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Log4j2
@@ -39,7 +40,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             String wxResult = HttpClientUtils.doGet(url, param);
             System.out.println(wxResult);
 
-            WXSessionModel model = JsonUtils.jsonToPojo(wxResult, WXSessionModel.class);
+            WXSessionVO model = JsonUtils.jsonToPojo(wxResult, WXSessionVO.class);
 
             // 存入session到redis
             assert model != null;
@@ -65,5 +66,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             log.error("头像存储失败：" + e);
         }
         return false;
+    }
+
+    @Override
+    public List<User> getsByUserIds(List userIds) {
+        return null;
     }
 }

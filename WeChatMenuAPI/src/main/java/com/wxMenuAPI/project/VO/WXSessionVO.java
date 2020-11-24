@@ -1,9 +1,9 @@
-package com.wxMenuAPI.project.model;
+package com.wxMenuAPI.project.VO;
 
 import lombok.Data;
 
 @Data
-public class WXSessionModel {
+public class WXSessionVO {
 
 	private String session_key;
 	private String openid;
