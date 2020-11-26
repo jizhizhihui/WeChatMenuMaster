@@ -34,7 +34,6 @@ public class DishesServiceImpl extends ServiceImpl<DishesMapper, Dishes> impleme
 
     @Override
     public IPage getsByAuthor(int userId,int pageNum,int pageSize) {
-
         // 单页记录数，页数
         Page<Dishes> page = new Page<>(pageNum, pageSize);
         return getBaseMapper().selectPage(page, new QueryWrapper<Dishes>().lambda().eq(Dishes::getUserId, userId));

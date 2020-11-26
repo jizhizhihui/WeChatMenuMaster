@@ -11,35 +11,33 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * <p>
- *  前端控制器
- * </p>
+ * 分类控制器
  *
  * @author com.JZhi
  * @since 2020-11-23
  */
 @RestController
 @RequestMapping("/api/menu-type")
-@Api(tags = "菜品分类")
+@Api(tags = "分类")
 public class MenuTypeController {
 
     @Reference(version = "1.0.0")
     private IMenuTypeService menuTypeService;
 
     @GetMapping("get/{id}")
-    @ApiOperation("获取菜品分类信息，ID")
+    @ApiOperation("获取分类信息，ID")
     public CommonResult get(@PathVariable int id) {
         return CommonResult.success(menuTypeService.getById(id));
     }
 
     @GetMapping("gets")
-    @ApiOperation("获取所有菜品分类信息")
+    @ApiOperation("获取所有分类信息")
     public CommonResult gets() {
         return CommonResult.success(menuTypeService.list());
     }
 
     @PutMapping("update")
-    @ApiOperation("更新菜品分类信息")
+    @ApiOperation("更新分类信息")
     public CommonResult update(@RequestBody MenuType menuType) {
         if(menuTypeService.updateById(menuType))
             return CommonResult.success("SUCCESS");
@@ -47,7 +45,7 @@ public class MenuTypeController {
     }
 
     @DeleteMapping("delete/{id}")
-    @ApiOperation("删除菜品分类信息")
+    @ApiOperation("删除分类信息")
     public CommonResult delete(@PathVariable int id) {
         if (menuTypeService.removeById(id))
             return CommonResult.success("SUCCESS");
@@ -55,7 +53,7 @@ public class MenuTypeController {
     }
 
     @PostMapping("add")
-    @ApiOperation("新增菜品分类信息")
+    @ApiOperation("新增分类信息")
     public CommonResult add(@RequestBody MenuType menuType) {
         if (menuTypeService.getById(menuType.getId()) != null)
             return CommonResult.success(menuTypeService.save(menuType));

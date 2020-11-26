@@ -25,6 +25,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Autowired
     private RedisUtils redis;
 
+    // 头像默认存储位置
+    private String path;
+
     @Override
     public boolean wxLogin(String code) {
         if (code.equals(""))
@@ -59,7 +62,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public boolean upLoadHeader(int userId,MultipartFile file){
         try{
             //保存图片
-            FileUtils.uploadImage(file);
+            FileUtils.uploadImage(file,path);
             //保存头像路径
             return true;
         } catch (Exception e){

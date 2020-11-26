@@ -18,13 +18,11 @@ import java.util.UUID;
 @Log4j2
 public class FileUtils {
 
-    @Value("task.file.image-path")
-    private static String path;
-
     //支持的图片类型
     private static final List<String> CONTENT_TYPE = Arrays.asList("image/gif", "image/jpeg", "image/png");
 
-    public static boolean uploadImage(MultipartFile file) {
+    public static boolean uploadImage(MultipartFile file,String path) {
+
         String originalFilename = file.getOriginalFilename();
 
         //建议文件类型

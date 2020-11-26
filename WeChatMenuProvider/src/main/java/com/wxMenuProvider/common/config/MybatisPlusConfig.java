@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-@MapperScan("com.electricPower.project.mapper")
+@MapperScan("com.wxMenuProvider.project.mapper")
 public class MybatisPlusConfig {
 
     /**

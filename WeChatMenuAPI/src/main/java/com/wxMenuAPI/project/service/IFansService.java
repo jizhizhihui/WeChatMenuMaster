@@ -25,7 +25,7 @@ public interface IFansService extends IService<Fans> {
      * @param userId 用户id
      * @return int
      */
-    int getFollowNum(int userId);
+    int getAttentionNum(int userId);
 
     /**
      * 通过用户id获取用户粉丝id
@@ -39,5 +39,5 @@ public interface IFansService extends IService<Fans> {
      * @param userId 用户id
      * @return List
      */
-    List getsFollow(int userId);
+    List getsAttention(int userId);
 }

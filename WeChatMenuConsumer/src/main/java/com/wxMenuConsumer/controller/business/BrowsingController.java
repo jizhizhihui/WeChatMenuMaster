@@ -1,15 +1,11 @@
 package com.wxMenuConsumer.controller.business;
 
-
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wxMenuAPI.common.result.CommonResult;
 import com.wxMenuAPI.project.entity.Browsing;
-import com.wxMenuAPI.project.entity.Dishes;
 import com.wxMenuAPI.project.service.IBrowsingService;
-import com.wxMenuAPI.project.service.IDishesService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**

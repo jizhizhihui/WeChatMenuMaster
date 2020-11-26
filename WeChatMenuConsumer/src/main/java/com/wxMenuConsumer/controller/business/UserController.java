@@ -1,7 +1,6 @@
 package com.wxMenuConsumer.controller.business;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.wxMenuAPI.project.entity.MenuType;
 import com.wxMenuAPI.project.entity.User;
 import com.wxMenuAPI.project.service.IUserService;
 import com.wxMenuAPI.common.result.CommonResult;

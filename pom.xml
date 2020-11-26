@@ -41,7 +41,7 @@
         <commons-lang3.version>3.0</commons-lang3.version>
         <swagger.version>2.9.0</swagger.version>
         <httpclient.version>4.3.5</httpclient.version>
-        <fastjson.version>1.2.47</fastjson.version>
+        <fastjson.version>1.2.73</fastjson.version>
     </properties>
 
     <dependencies>

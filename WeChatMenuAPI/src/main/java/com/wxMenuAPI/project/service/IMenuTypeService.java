@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import java.util.List;
 
 /**
- *  菜单分类服务类
+ *  分类服务类
  *
  * @author com.JZhi
  * @since 2020-11-23

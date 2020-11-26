@@ -26,7 +26,7 @@ import springfox.documentation.spring.web.json.Json;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("t_dishes")
+@TableName(value = "t_dishes",autoResultMap = true)
 @ApiModel(value="Dishes对象", description="菜品信息")
 public class Dishes implements Serializable {
 
@@ -36,12 +36,11 @@ public class Dishes implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "菜品名称")
-    private String dishesName;
+    @ApiModelProperty(value = "菜品标题")
+    private String dishesTitle;
 
-    @ApiModelProperty(value = "菜品分类；多个分类的标签：[{'id':1,'name';'家常菜'},{'id':8,'name;:'烘焙'}]")
-    @TableField(typeHandler = FastjsonTypeHandler.class)
-    private List<DishesTypeVO> menuType;
+    @ApiModelProperty(value = "作者说；前景提示")
+    private String authorSaid;
 
     @ApiModelProperty(value = "作者")
     private Integer userId;
@@ -62,5 +61,4 @@ public class Dishes implements Serializable {
 
     @ApiModelProperty(value = "更新日期")
     private LocalDate updateTime;
-
 }

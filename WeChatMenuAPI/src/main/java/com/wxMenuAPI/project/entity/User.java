@@ -46,7 +46,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "住址")
     private String address;
 
-    @ApiModelProperty(value = "性别(0:男;1:女)")
+    @ApiModelProperty(value = "性别(0:女;1:男)")
     private Boolean sex;
 
     @ApiModelProperty(value = "真实姓名")
@@ -69,6 +69,5 @@ public class User implements Serializable {
 
     @ApiModelProperty(value = "注册时间")
     private LocalDateTime registerTime;
-
 
 }

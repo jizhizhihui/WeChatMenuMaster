@@ -4,3 +4,7 @@ server:
 dubbo:
   application:
     id: dubbo_consumers
+
+spring:
+  file:
+    imagePath: D:\桌面\homework\images

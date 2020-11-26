@@ -57,9 +57,9 @@ public class DishesController {
     @PostMapping("add")
     @ApiOperation("新增菜品信息")
     public CommonResult add(@RequestBody Dishes dishes) {
-        if (dishesService.getById(dishes.getId()) != null)
+        if (dishesService.getById(dishes.getId()) == null)
             return CommonResult.success(dishesService.save(dishes));
-        return CommonResult.failed("ID 不存在");
+        return CommonResult.failed("ID 已存在");
     }
 
     @GetMapping("getsByAuthor")

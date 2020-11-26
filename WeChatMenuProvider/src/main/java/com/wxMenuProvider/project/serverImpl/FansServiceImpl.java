@@ -25,7 +25,7 @@ public class FansServiceImpl extends ServiceImpl<FansMapper, Fans> implements IF
     }
 
     @Override
-    public int getFollowNum(int userId) {
+    public int getAttentionNum(int userId) {
         return 0;
     }
 
@@ -35,7 +35,7 @@ public class FansServiceImpl extends ServiceImpl<FansMapper, Fans> implements IF
     }
 
     @Override
-    public List getsFollow(int userId) {
+    public List getsAttention(int userId) {
         return null;
     }
 }
