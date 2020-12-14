@@ -1,9 +1,8 @@
-package com.wxMenuConsumer.controller.business;
+package com.wxMenuConsumer.controller.job;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wxMenuAPI.common.result.CommonResult;
-import com.wxMenuAPI.project.entity.Browsing;
 import com.wxMenuAPI.project.entity.Comment;
 import com.wxMenuAPI.project.service.ICommentService;
 import io.swagger.annotations.Api;
@@ -59,4 +58,11 @@ public class CommentController {
             return CommonResult.success(commentService.save(comment));
         return CommonResult.failed("ID 不存在");
     }
+
+    @GetMapping("getComments")
+    @ApiOperation("获取菜品评论信息")
+    public CommonResult getComments(@RequestParam int dishesId,int pageNum, int pageSize) {
+        return CommonResult.success(commentService.getCommentVO(dishesId,pageNum,pageSize));
+    }
+
 }

@@ -17,12 +17,12 @@ public interface IBrowsingService extends IService<Browsing> {
      * @param dishesId 菜品id
      * @return BrowsingNumVO
      */
-    BrowsingNumVO getBrowsingById(int dishesId);
+    BrowsingNumVO getByDishesId(int dishesId);
 
     /**
      * 通过用户id获取浏览数和收藏数
      * @param userId 用户id
      * @return BrowsingNumVO
      */
-    BrowsingNumVO getBrowsingByUserId(int userId);
+    BrowsingNumVO getByUserId(int userId);
 }

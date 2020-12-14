@@ -34,6 +34,9 @@ public class Comment implements Serializable {
     @ApiModelProperty(value = "评论时间")
     private LocalDateTime commentTime;
 
-    @ApiModelProperty(value = "星星（用户好评）")
-    private int start;
+    @ApiModelProperty(value = "父级评论ID")
+    private int parentId;
+
+    @ApiModelProperty(value = "评论内容")
+    private String content;
 }

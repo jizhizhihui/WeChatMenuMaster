@@ -1,7 +1,15 @@
 task:
   multipart:
     maxFileSize: 50Mb
-  # 设置所有文件最大内存
+    # 设置所有文件最大内存
     maxRequestSize: 50Mb
   file:
-    base-path: C:\Code\JavaCode\uploadImage\
+    imagePath: E:\Pictures\images
+  wx:
+    # 微信请求路径
+    url: https://api.weixin.qq.com/sns/jscode2session
+    secret: dfc2458a1fd53e5ba68ccd2777a276c7
+    appid: wx0f5ddd98f0c10ae9
+    grantType: authorization_code
+    # sessionKey过期时间（单位秒）
+    loginExpire: 7200

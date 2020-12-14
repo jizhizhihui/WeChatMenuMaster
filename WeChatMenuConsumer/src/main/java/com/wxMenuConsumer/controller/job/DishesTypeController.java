@@ -1,11 +1,9 @@
-package com.wxMenuConsumer.controller.business;
+package com.wxMenuConsumer.controller.job;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wxMenuAPI.common.result.CommonResult;
-import com.wxMenuAPI.project.entity.Dishes;
 import com.wxMenuAPI.project.entity.DishesType;
-import com.wxMenuAPI.project.service.IDishesService;
 import com.wxMenuAPI.project.service.IDishesTypeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

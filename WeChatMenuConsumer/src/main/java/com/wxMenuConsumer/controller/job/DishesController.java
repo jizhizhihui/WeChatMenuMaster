@@ -1,7 +1,8 @@
-package com.wxMenuConsumer.controller.business;
+package com.wxMenuConsumer.controller.job;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.wxMenuAPI.common.result.CommonResult;
 import com.wxMenuAPI.project.entity.Dishes;
 import com.wxMenuAPI.project.service.IDishesService;
@@ -34,8 +35,8 @@ public class DishesController {
 
     @GetMapping("gets")
     @ApiOperation("获取所有菜品信息")
-    public CommonResult gets() {
-        return CommonResult.success(dishesService.list());
+    public CommonResult gets(@RequestParam int pageNum,int pageSize) {
+        return CommonResult.success(dishesService.listPage(pageNum,pageSize));
     }
 
     @PutMapping("update")
@@ -66,5 +67,18 @@ public class DishesController {
     @ApiOperation("通过作者分类获取菜品")
     public CommonResult getsByAuthor(@RequestParam int authorId, int pageNum, int pageSize) {
         return CommonResult.success(dishesService.getsByAuthor(authorId, pageNum, pageSize));
+    }
+
+
+    @GetMapping("getCards")
+    @ApiOperation("通过分类Id获取菜品")
+    public CommonResult getDishesCards(int pageNum, int pageSize) {
+        return CommonResult.success(dishesService.getDishesCards(null, pageNum, pageSize));
+    }
+
+    @GetMapping("getDishesByOpenId")
+    @ApiOperation("通过用户的OpenId获取菜品")
+    public CommonResult getDishesByOpenId(@RequestParam String openId, int pageNum, int pageSize) {
+        return CommonResult.success(dishesService.getDishesByOpenId(openId, pageNum, pageSize));
     }
 }

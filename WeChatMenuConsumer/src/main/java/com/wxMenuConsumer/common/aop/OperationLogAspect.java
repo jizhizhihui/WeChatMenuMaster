@@ -1,17 +1,11 @@
-package com.wxMenuConsumer.common.aop;//package com.electricPower.common.aop;
+//package com.wxMenuConsumer.common.aop;
 //
-//import com.alibaba.druid.support.json.JSONUtils;
-//import com.electricPower.project.entity.OperExceptionLog;
-//import com.electricPower.project.entity.OperationLog;
-//import com.electricPower.project.service.IOperExceptionLogService;
-//import com.electricPower.project.service.IOperationLogService;
-//import com.electricPower.utils.IpUtils;
+//
 //import org.aspectj.lang.JoinPoint;
 //import org.aspectj.lang.annotation.AfterReturning;
 //import org.aspectj.lang.annotation.AfterThrowing;
 //import org.aspectj.lang.annotation.Aspect;
 //import org.aspectj.lang.annotation.Pointcut;
-//import org.aspectj.lang.reflect.MethodSignature;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.stereotype.Component;

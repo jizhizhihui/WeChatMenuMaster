@@ -1,9 +1,8 @@
-package com.wxMenuConsumer.controller.business;
+package com.wxMenuConsumer.controller.job;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wxMenuAPI.common.result.CommonResult;
-import com.wxMenuAPI.project.entity.Fans;
 import com.wxMenuAPI.project.entity.MenuType;
 import com.wxMenuAPI.project.service.IMenuTypeService;
 import io.swagger.annotations.Api;
@@ -34,6 +33,12 @@ public class MenuTypeController {
     @ApiOperation("获取所有分类信息")
     public CommonResult gets() {
         return CommonResult.success(menuTypeService.list());
+    }
+
+    @GetMapping("getParentChildrenMenu")
+    @ApiOperation("获取父菜单和子菜单信息")
+    public CommonResult getParentChildrenMenu() {
+        return CommonResult.success(menuTypeService.getParentChildrenMenu());
     }
 
     @PutMapping("update")

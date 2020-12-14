@@ -10,11 +10,12 @@ import com.wxMenuAPI.project.service.IBrowsingService;
 import com.wxMenuProvider.project.mapper.BrowsingMapper;
 import lombok.extern.log4j.Log4j2;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.annotation.Resource;
 
 /**
- * <p>
- *  服务实现类
- * </p>
+ *  收藏浏览服务实现类
  *
  * @author com.JZhi
  * @since 2020-11-23
@@ -24,7 +25,7 @@ import org.apache.dubbo.config.annotation.Service;
 public class BrowsingServiceImpl extends ServiceImpl<BrowsingMapper, Browsing> implements IBrowsingService {
 
     @Override
-    public BrowsingNumVO getBrowsingById(int dishesId) {
+    public BrowsingNumVO getByDishesId(int dishesId) {
         BrowsingNumVO browsingNumVO = new BrowsingNumVO();
 
         QueryWrapper<Browsing> queryWrapper = new QueryWrapper<Browsing>().eq("dishes_id",dishesId).eq("browsing",1);
@@ -35,7 +36,7 @@ public class BrowsingServiceImpl extends ServiceImpl<BrowsingMapper, Browsing> i
     }
 
     @Override
-    public BrowsingNumVO getBrowsingByUserId(int userId) {
+    public BrowsingNumVO getByUserId(int userId) {
         BrowsingNumVO browsingNumVO = new BrowsingNumVO();
 
         QueryWrapper<Browsing> queryWrapper = new QueryWrapper<Browsing>().eq("user_id",userId).eq("browsing",1);
@@ -62,10 +63,6 @@ public class BrowsingServiceImpl extends ServiceImpl<BrowsingMapper, Browsing> i
         }
 
         return " ";
-    }
-
-    public static void main(String[] args) {
-//        log.error(integration(198765));
     }
 
 }

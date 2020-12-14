@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.wxMenuAPI.utils.ImageUtils;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -30,6 +32,13 @@ public class MenuType implements Serializable {
     @ApiModelProperty(value = "父级")
     private Integer parent;
 
-    @ApiModelProperty(value = "菜单名称")
+    @ApiModelProperty(value = "分类名称")
     private String menuName;
+
+    @ApiModelProperty(value = "分类图片")
+    private String menuImage;
+
+    public String getMenuImage(){
+        return ImageUtils.dishesTypePicturePath(menuImage) ;
+    }
 }

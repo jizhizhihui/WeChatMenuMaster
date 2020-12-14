@@ -14,7 +14,7 @@ import java.util.List;
 
 public class CodeGenerator3 {
 
-    private static String url = "jdbc:mysql://localhost:3306/wx_menu?serverTimezone=CTT";
+    private static String url = "jdbc:mysql://10.12.9.102:3306/wx_ment?serverTimezone=CTT";
     private static String user = "root";
     private static String password = "root";
     private static String driverName = "com.mysql.cj.jdbc.Driver";
@@ -68,7 +68,7 @@ public class CodeGenerator3 {
                 .setRestControllerStyle(true) //RestController注解
                 .setControllerMappingHyphenStyle(true)          //驼峰转连字符
                 .setTablePrefix(tablePrefix)   //表前缀
-                .setInclude("t_dishes_type"); // 需要生成的表,默认全部
+                .setInclude("t_comment_start"); // 需要生成的表,默认全部
 //                .setExclude(new String[]{"test"}) // 排除生成的表
 //                .setSuperEntityClass("com.baomidou.test.base.BsBaseEntity") //自定义实体父类
 //                .setSuperMapperClass("com.baomidou.test.base.BsBaseMapper")   // 自定义 mapper 父类

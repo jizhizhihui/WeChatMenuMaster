@@ -16,18 +16,17 @@ public interface IUserService extends IService<User> {
 
     /**
      * 微信登录
-     * @param code 微信code
+     * @param open_id 微信open_id
      * @return boolean
      */
-    boolean wxLogin(String code);
+    User getByOpenId(String open_id);
 
     /**
-     * 更换头像
+     * 获取用户名与头像
      * @param userId 用户id
-     * @param file 图片文件
-     * @return boolean
+     * @return User
      */
-    boolean upLoadHeader(int userId, MultipartFile file);
+    User getUserHeaderAndName(int userId);
 
     /**
      * 通过用户id集获取用户信息

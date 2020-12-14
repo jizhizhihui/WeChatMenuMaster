@@ -4,9 +4,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.wxMenuAPI.project.entity.Dishes;
 
-import java.util.List;
-
-
 /**
  * 菜品服务类
  *
@@ -14,6 +11,12 @@ import java.util.List;
  * @since 2020-11-23
  */
 public interface IDishesService extends IService<Dishes> {
+
+    /**
+     * 获取菜品集合
+     * @return IPage
+     */
+    IPage listPage(int pageNum,int pageSize);
 
     /**
      * 通过菜品名模糊获取菜品
@@ -24,10 +27,10 @@ public interface IDishesService extends IService<Dishes> {
 
     /**
      * 通过菜品分类获取菜品
-     * @param type 菜品分类
+     * @param typeId 菜品分类ID
      * @return IPage
      */
-    IPage getsByType(String[] type, int pageNum, int pageSize);
+    IPage getsByType(Integer typeId, int pageNum, int pageSize);
 
     /**
      * 通过作者分类获取菜品
@@ -42,4 +45,8 @@ public interface IDishesService extends IService<Dishes> {
      * @return IPage
      */
     IPage getsByMaterials(String[] materialsName,int pageNum,int pageSize);
+
+    IPage getDishesCards(Integer typeId,int pageNum,int pageSize);
+
+    IPage getDishesByOpenId(String openId,int pageNum,int pageSize);
 }

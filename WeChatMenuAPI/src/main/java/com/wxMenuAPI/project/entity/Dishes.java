@@ -12,6 +12,7 @@ import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
 import com.wxMenuAPI.project.VO.DishesMaterialsVO;
 import com.wxMenuAPI.project.VO.DishesProcedureVO;
 import com.wxMenuAPI.project.VO.DishesTypeVO;
+import com.wxMenuAPI.utils.ImageUtils;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -29,7 +30,6 @@ import springfox.documentation.spring.web.json.Json;
 @TableName(value = "t_dishes",autoResultMap = true)
 @ApiModel(value="Dishes对象", description="菜品信息")
 public class Dishes implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "菜品表主键")
@@ -45,6 +45,12 @@ public class Dishes implements Serializable {
     @ApiModelProperty(value = "作者")
     private Integer userId;
 
+    @ApiModelProperty(value = "作者名")
+    private String username;
+
+    @ApiModelProperty(value = "作者头像")
+    private String userHeader;
+
     @ApiModelProperty(value = "用料；如：[{'name':'鸡蛋','number':'2个'},{'name':'面粉','number':'500克'}]")
     @TableField(typeHandler = FastjsonTypeHandler.class)
     private List<DishesMaterialsVO> materials;
@@ -52,6 +58,9 @@ public class Dishes implements Serializable {
     @ApiModelProperty(value = "做菜详细；如：[{'step‘:1,'picture':'image1',content':‘步骤详情’}，{'step‘:2,'pictureId':'image2','content':‘步骤详情’}]")
     @TableField(typeHandler = FastjsonTypeHandler.class)
     private List<DishesProcedureVO> detailed;
+
+    @ApiModelProperty(value = "菜品头像")
+    private String dishesHeader;
 
     @ApiModelProperty(value = "提示")
     private String tips;
@@ -61,4 +70,15 @@ public class Dishes implements Serializable {
 
     @ApiModelProperty(value = "更新日期")
     private LocalDate updateTime;
+
+    @ApiModelProperty(value = "菜品状态（0：草稿；1：正常；2：删除）")
+    private int status;
+
+    public String getDishesHead(){
+        return ImageUtils.dishesHeaderPath(dishesHeader);
+    }
+
+    public String getUserHeader(){
+        return ImageUtils.userHeaderPath(userHeader);
+    }
 }

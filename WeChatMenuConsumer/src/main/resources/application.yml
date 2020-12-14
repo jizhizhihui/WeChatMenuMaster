@@ -1,10 +1,24 @@
 ## 避免客户端和服务端 端口 冲突
 server:
   port: 9098
+#  ssl:
+#    enabled: true
+    ##    # 指定证书
+    ##    key-store: classpath:tomcat_https.keystore
+    ##    key-store-type: JKS
+    ##    #密码
+    ##    key-password: javastack
+    ##    key-store-password: javastack
+  ##    # 别名
+  ##    key-alias: tomcat_https
+spring:
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: file:E://Pictures/images/
+  file:
+    imagePath: E:\Pictures\images
+
 dubbo:
   application:
     id: dubbo_consumers
-
-spring:
-  file:
-    imagePath: D:\桌面\homework\images

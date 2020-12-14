@@ -1,13 +1,9 @@
-package com.wxMenuAPI.utils;
+package com.wxMenuProvider.utils;
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletRequest;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -19,8 +15,14 @@ import java.util.UUID;
 public class FileUtils {
 
     //支持的图片类型
-    private static final List<String> CONTENT_TYPE = Arrays.asList("image/gif", "image/jpeg", "image/png");
+    private static final List<String> CONTENT_TYPE = Arrays.asList("images/gif", "images/jpeg", "images/png");
 
+    /**
+     * 上传图片
+     * @param file 图片
+     * @param path 路径
+     * @return boolean
+     */
     public static boolean uploadImage(MultipartFile file,String path) {
 
         String originalFilename = file.getOriginalFilename();
@@ -51,5 +53,31 @@ public class FileUtils {
             e.printStackTrace();
         }
         return false;
+    }
+
+    /**
+     * 获取文件后缀
+     * @param fileName
+     * @return
+     */
+    public static String getFileSuffix(String fileName){
+        return fileName.substring(fileName.lastIndexOf("."));
+    }
+
+
+    /**
+     * 生成新的文件名
+     * @param fileOriginName 源文件名
+     * @return
+     */
+    public static String getFileName(String fileOriginName){
+        return getUUID() + getFileSuffix(fileOriginName);
+    }
+
+    /**
+     * 生成文件名
+     */
+    public static String getUUID(){
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

@@ -1,4 +1,4 @@
-package com.wxMenuConsumer.controller.business;
+package com.wxMenuConsumer.controller.job;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wxMenuAPI.common.result.CommonResult;
@@ -57,4 +57,17 @@ public class BrowsingController {
             return CommonResult.success(browsingService.save(browsing));
         return CommonResult.failed("ID 不存在");
     }
+
+    @GetMapping("getByDishesId/{dishesId}")
+    @ApiOperation("通过菜品id获取菜品收藏浏览信息")
+    public CommonResult getByDishesId(@PathVariable("dishesId") int dishesId) {
+        return CommonResult.success(browsingService.getByDishesId(dishesId));
+    }
+
+    @GetMapping("getByUserId/{userId}")
+    @ApiOperation("通过用户Id获取用户的菜品收藏浏览信息")
+    public CommonResult getByUserId(@PathVariable("userId") int userId) {
+        return CommonResult.success(browsingService.getByUserId(userId));
+    }
+
 }

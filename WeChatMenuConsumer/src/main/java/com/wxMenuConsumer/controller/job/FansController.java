@@ -1,9 +1,8 @@
-package com.wxMenuConsumer.controller.business;
+package com.wxMenuConsumer.controller.job;
 
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wxMenuAPI.common.result.CommonResult;
-import com.wxMenuAPI.project.entity.Comment;
 import com.wxMenuAPI.project.entity.Fans;
 import com.wxMenuAPI.project.service.IFansService;
 import io.swagger.annotations.Api;
